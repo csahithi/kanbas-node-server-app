@@ -20,4 +20,3 @@ ModuleRoutes(app);
 AssignmentRoutes(app);
 Lab5(app);
 Hello(app);
-app.listen(4000);
