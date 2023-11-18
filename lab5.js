@@ -60,6 +60,12 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id/delete", (req, res) => {
         const { id } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.status(404)
+            .json({ message:
+            `Unable to delete Todo with ID ${id}` });
+            return;
+        }
         todos.splice(todos.indexOf(todo), 1);
         res.json(todos);
     });
