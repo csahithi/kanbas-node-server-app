@@ -1,5 +1,10 @@
 import Database from "../Database/index.js";
 function CourseRoutes(app) {
+    app.post("api/test", (req, res) => {
+        const user = req.body;
+        res.json(user);
+    }
+    );
     app.get("/api/courses/:id", (req, res) => {
         const { id } = req.params;
         const course = Database.courses
